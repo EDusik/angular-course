@@ -1,0 +1,42 @@
+
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+    .post {
+      flex: 1 1 200px;
+      margin: 10px;
+      width: 100%;
+      height: 160px;
+      padding: 20px;
+      box-shadow: 0 10px 10px -5px;
+      border: solid 1px #ced7ef;
+      color: #7f8c8d;
+
+      h3 {
+        text-align: center;
+        &::first-letter {
+          text-transform: uppercase;
+        }
+      }
+
+      p {
+        margin-bottom: 15px;
+        &::first-letter {
+          text-transform: uppercase;
+        }
+      }
+
+      a{
+        text-align: center;
+        display: inherit;
+        color: #0097e6;
+        &:hover{
+          cursor: pointer;
+          text-decoration: underline;
+        }
+      }
+    }
+}
