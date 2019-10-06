@@ -3,18 +3,21 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { PostsComponent } from './posts/posts.component';
-import { PostComponent } from './posts/post/post.component';
+import { PostsService } from './services/posts.service';
+import { HttpClientModule } from '@angular/common/http';
+import { PostsModule } from './posts/posts.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PostsComponent,
-    PostComponent
+    PostsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    PostsModule
   ],
-  providers: [],
+  providers: [PostsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
