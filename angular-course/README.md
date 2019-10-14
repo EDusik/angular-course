@@ -19,3 +19,7 @@ ng g class <name>
 
 ### Generate New Module
 ng generate module <name> 
+
+
+### Generate New Routing Module
+ng generate module app-routing --flat --module=app

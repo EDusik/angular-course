@@ -1,0 +1,23 @@
+<div class="flex">
+  <h3>Post</h3>
+  <div class="btn-left">
+      <button (click)="goBackToPostList()">back</button>
+  </div>
+  <div class="post-details" [@appeared]="commentState">
+    <h3>{{post?.title}}</h3>
+    <p>{{post?.body}}</p>
+  </div>
+
+  <h3>Comments</h3>
+  <div class="btn-middle">
+    <button (click)="showAllComments()">{{ showComments === true ? 'hide comments' : 'show comments' }}</button>
+  </div>
+  <div [hidden]="!showComments" [@appeared]="commentState">
+    <div *ngFor="let comment of comments" class="comment-details" [@appeared]="commentState">
+      <h3>{{comment?.name}}</h3>
+      <p>{{comment?.body}}</p>
+      <p><i>{{comment?.email}}</i></p>
+    </div>
+  </div>
+</div>
+
