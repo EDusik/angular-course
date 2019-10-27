@@ -4,8 +4,16 @@ import {trigger, state, style, transition, animate} from '@angular/animations';
 
 @Component({
   selector: 'app-posts',
-  templateUrl: './posts.component.html',
   styleUrls: ['./posts.component.scss'],
+  template: `
+  <div class="wrapper">
+    <div *ngFor="let post of posts" class="post" [@postAppeared]="postState">
+      <h3>{{ (post?.title.length > 16) ?  (post?.title | slice:0:16) + '...' : (post?.title)}}</h3>
+      <p>{{ (post?.body.length > 60) ?  (post?.body | slice:0:60) + '...' : (post?.body) }}</p>
+      <a [routerLink]="['/post/'+ post?.id]">ver mais</a>
+    </div>
+  </div>
+  `,
   animations: [
     trigger('postAppeared', [
       state('ready', style({opacity: 1})),

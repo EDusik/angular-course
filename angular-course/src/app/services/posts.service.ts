@@ -23,4 +23,7 @@ export class PostsService {
     return this.httpClient.get<PostCommentModel[]>(`https://jsonplaceholder.typicode.com/comments?postId=${id}`);
   }
 
+  newPost(post: PostModel): Observable<PostModel> {
+    return this.httpClient.post<PostModel>('https://jsonplaceholder.typicode.com/posts', post);
+  }
 }

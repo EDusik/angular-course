@@ -1,0 +1,21 @@
+<div class="wrapper">
+  <form [formGroup]="newPostForm">
+    <div class="form-group">
+      <label for="userId">User Id</label>
+      <input type="text" class="form-control" id="userId" placeholder="User Id "formControlName="userId">
+    </div>
+    <div class="form-group">
+      <label for="id">Id</label>
+      <input type="text" class="form-control" id="id" placeholder="id" formControlName="id">
+    </div>
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" class="form-control" id="title" placeholder="Title" formControlName="title">
+    </div>
+    <div class="form-group">
+      <label for="body">Body</label>
+      <textarea class="form-control" id="body" rows="5" formControlName="body"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!newPostForm.valid" (click)="createPost()">Submit</button>
+  </form>
+</div>

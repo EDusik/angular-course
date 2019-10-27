@@ -9,12 +9,15 @@ import { PostsModule } from './posts/posts.module';
 import { RouterModule } from '@angular/router';
 import { PostDetailsComponent } from './posts/post-details/post-details.component';
 import { AppRoutingModule } from './routers/app-routing.module';
+import { PostCreateComponent } from './posts/post-create/post-create.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostsComponent,
-    PostDetailsComponent
+    PostDetailsComponent,
+    PostCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -23,6 +26,8 @@ import { AppRoutingModule } from './routers/app-routing.module';
     RouterModule,
     AppRoutingModule,
     RouterModule.forRoot([]),
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [PostsService],
   bootstrap: [AppComponent]
