@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PostsService } from '../services/posts.service';
+
 import {trigger, state, style, transition, animate} from '@angular/animations';
+import { PostsService } from 'src/app/services/posts.service';
 
 @Component({
   selector: 'app-posts',

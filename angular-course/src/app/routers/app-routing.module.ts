@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PostsComponent } from '../posts/posts.component';
-import { PostDetailsComponent } from '../posts/post-details/post-details.component';
-import { PostCreateComponent } from '../posts/post-create/post-create.component';
-import { LoginComponent } from '../shared/login/login.component';
+import { LoginComponent } from '../components/shared/login/login.component';
+import { PostsComponent } from '../components/posts/posts.component';
+import { PostDetailsComponent } from '../components/posts/post-details/post-details.component';
+import { PostCreateComponent } from '../components/posts/post-create/post-create.component';
 import { AuthGuardService } from '../services/auth.guard';
 
 const routes: Routes = [

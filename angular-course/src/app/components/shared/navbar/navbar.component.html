@@ -1,0 +1,18 @@
+<nav class="navbar" role="navigation">
+  <div align="center">
+    <ul>
+      <li>
+        <a [routerLink]="['/posts']" [routerLinkActive]="['link-active']">posts</a>
+      </li>
+      <li *ngIf="userIsAuthenticated">
+        <a [routerLink]="['/create-post']" [routerLinkActive]="['link-active']">new post</a>
+      </li>
+      <li *ngIf="!userIsAuthenticated">
+        <a [routerLink]="['/login']" [routerLinkActive]="['link-active']">sign in</a>
+      </li>
+      <li *ngIf="userIsAuthenticated">
+        <a (click)="logout()">sign out</a>
+      </li>
+    </ul>
+  </div>
+</nav>

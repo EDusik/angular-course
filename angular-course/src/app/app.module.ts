@@ -2,16 +2,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { PostsComponent } from './posts/posts.component';
 import { PostsService } from './services/posts.service';
 import { HttpClientModule } from '@angular/common/http';
-import { PostsModule } from './posts/posts.module';
 import { RouterModule } from '@angular/router';
-import { PostDetailsComponent } from './posts/post-details/post-details.component';
 import { AppRoutingModule } from './routers/app-routing.module';
-import { PostCreateComponent } from './posts/post-create/post-create.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LoginComponent } from './shared/login/login.component';
+import { PostDetailsComponent } from './components/posts/post-details/post-details.component';
+import { PostsComponent } from './components/posts/posts.component';
+import { PostCreateComponent } from './components/posts/post-create/post-create.component';
+import { LoginComponent } from './components/shared/login/login.component';
+import { PostsModule } from './components/posts/posts.module';
+import { NavbarComponent } from './components/shared/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LoginComponent } from './shared/login/login.component';
     PostsComponent,
     PostDetailsComponent,
     PostCreateComponent,
-    LoginComponent
+    LoginComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
