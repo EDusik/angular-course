@@ -17,14 +17,14 @@ export class PostCreateComponent implements OnInit {
     private postService: PostsService
   ) { }
 
-  newPostForm: FormGroup;
+  createPostForm: FormGroup;
 
   ngOnInit() {
-    this.setNewPostForm();
+    this.setPostForm();
   }
 
-  setNewPostForm() {
-    this.newPostForm = this.formBuilder.group({
+  setPostForm() {
+    this.createPostForm = this.formBuilder.group({
       userId: this.formBuilder.control('', [Validators.required, Validators.minLength(MIN_LENGTH), Validators.maxLength(4)]),
       id: this.formBuilder.control('', [Validators.required, Validators.minLength(MIN_LENGTH), Validators.maxLength(4)]),
       title: this.formBuilder.control('', [Validators.required, Validators.minLength(MIN_LENGTH), Validators.maxLength(MAX_LENGTH)]),
@@ -35,9 +35,9 @@ export class PostCreateComponent implements OnInit {
   createPost() {
     const data = {
       userId: 1,
-      id: this.newPostForm.get('id').value,
-      title: this.newPostForm.get('title').value,
-      body: this.newPostForm.get('body').value,
+      id: this.createPostForm.get('id').value,
+      title: this.createPostForm.get('title').value,
+      body: this.createPostForm.get('body').value,
     };
 
     this.postService.newPost(data).subscribe(

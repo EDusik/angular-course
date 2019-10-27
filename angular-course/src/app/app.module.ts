@@ -11,13 +11,15 @@ import { PostDetailsComponent } from './posts/post-details/post-details.componen
 import { AppRoutingModule } from './routers/app-routing.module';
 import { PostCreateComponent } from './posts/post-create/post-create.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './shared/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostsComponent,
     PostDetailsComponent,
-    PostCreateComponent
+    PostCreateComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

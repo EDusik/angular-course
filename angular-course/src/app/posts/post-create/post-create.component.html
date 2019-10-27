@@ -1,8 +1,8 @@
 <div class="wrapper">
-  <form [formGroup]="newPostForm">
+  <form [formGroup]="createPostForm">
     <div class="form-group">
       <label for="userId">User Id</label>
-      <input type="text" class="form-control" id="userId" placeholder="User Id "formControlName="userId">
+      <input type="text" class="form-control" id="userId" placeholder="User Id" formControlName="userId">
     </div>
     <div class="form-group">
       <label for="id">Id</label>
@@ -16,6 +16,6 @@
       <label for="body">Body</label>
       <textarea class="form-control" id="body" rows="5" formControlName="body"></textarea>
     </div>
-    <button type="submit" class="btn btn-primary" [disabled]="!newPostForm.valid" (click)="createPost()">Submit</button>
+    <button type="submit" class="btn btn-primary" [disabled]="!createPostForm.valid" (click)="createPost()">Submit</button>
   </form>
 </div>

@@ -27,11 +27,6 @@
         border: solid #7f8c8d 1px;
         padding: 4px 10px;
       }
-
-      textarea {
-        width: 100%;
-        margin-bottom: 15px;
-      }
     }
 
     .btn {
@@ -40,10 +35,10 @@
       border: none;
       color: white;
       text-transform: uppercase;
-      cursor: pointer;
       padding: 15px;
       cursor: pointer;
       float: right;
+      margin-top: 15px;
 
       &:disabled {
         opacity: .6;
