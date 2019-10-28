@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
+import { UserModel } from 'src/app/models/user.model';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -11,9 +13,13 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
+  user: UserModel;
+  invalidEmailOrPassoword = false;
+  newAccount = false;
 
   constructor(
     private formBuilder: FormBuilder,
+    private userService: UserService,
     private authService: AuthService,
     private router: Router,
   ) { }
@@ -30,23 +36,46 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin() {
-    let authObs = false;
+    // let authObs = false;
 
-    const data = {
+    this.user = {
+      email: this.loginForm.get('user').value,
+      password: this.loginForm.get('password').value,
+    };
+    let token;
+    const userApi = this.userService.login(this.user);
+    userApi.subscribe(
+      response => token = response.access_token,
+      error => this.invalidEmailOrPassoword = true
+    )
+    .add(() => {
+      this.authService.storeUser(this.user, token);
+      this.router.navigate(['posts']);
+    });
+  }
+
+  onNewAccount() {
+    this.newAccount = true;
+    this.clearLoginForm();
+  }
+
+  onRegister() {
+    let token;
+    this.user = {
       email: this.loginForm.get('user').value,
       password: this.loginForm.get('password').value,
     };
 
-    authObs = this.authService.login(data.email, data.password);
-
-    if (authObs) {
-      this.router.navigateByUrl('/posts');
-      this.authService.setToken();
-    } else {
-      this.clearLoginForm();
-      alert('Invalid email or password');
-      this.authService.logout();
-    }
+    const userApi = this.userService.register(this.user);
+    userApi.subscribe(
+      response => token = response.access_token,
+      error => this.invalidEmailOrPassoword = true
+    )
+    .add(() => {
+      this.authService.storeUser(this.user, token);
+      alert('New account successfully created!');
+      this.router.navigate(['posts']);
+    });
   }
 
   clearLoginForm() {

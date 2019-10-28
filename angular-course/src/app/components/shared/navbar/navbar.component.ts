@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class NavbarComponent implements OnInit {
 
   userIsAuthenticated = false;
+  userEmail: string;
 
   constructor(
     private authService: AuthService,
@@ -17,15 +18,19 @@ export class NavbarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.checkUser();
   }
 
-  // tslint:disable-next-line: use-lifecycle-interface
-  ngDoCheck(): void {
-    this.userIsAuthenticated = this.authService.userIsAuthenticated();
+  checkUser() {
+    if (sessionStorage.getItem('access_token') !== null) {
+      this.userIsAuthenticated = true;
+      this.userEmail = sessionStorage.getItem('user_id');
+    }
   }
 
   logout() {
     this.authService.logout();
+    this.userIsAuthenticated = false;
     this.router.navigateByUrl('/posts');
   }
 }

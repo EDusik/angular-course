@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { UserModel } from '../models/user.model';
 
 const AUTH_TOKEN = 'authenticated';
-const USER_ID = '01';
 
 @Injectable({
   providedIn: 'root'
@@ -22,22 +22,14 @@ export class AuthService {
     return localStorage.getItem('userId');
   }
 
-  login(username: string, password: string) {
-    if (username === 'admin' && password === '12345') {
-      localStorage.setItem('token', AUTH_TOKEN);
-      localStorage.setItem('userId', USER_ID);
-      return true;
-    }
-    return false;
+  storeUser(user: UserModel, token) {
+      sessionStorage.setItem('access_token', token);
+      sessionStorage.setItem('user_id', user.email);
   }
 
   logout() {
-    localStorage.removeItem('userId');
-    localStorage.removeItem('token');
-  }
-
-  setToken() {
-    localStorage.setItem('token', AUTH_TOKEN);
+    sessionStorage.removeItem('access_token');
+    sessionStorage.removeItem('user_id');
   }
 
 }

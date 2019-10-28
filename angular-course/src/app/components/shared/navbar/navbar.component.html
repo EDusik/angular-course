@@ -1,17 +1,21 @@
 <nav class="navbar" role="navigation">
-  <div align="center">
+  <div>
     <ul>
       <li>
         <a [routerLink]="['/posts']" [routerLinkActive]="['link-active']">posts</a>
       </li>
-      <li *ngIf="userIsAuthenticated">
+      <li>
         <a [routerLink]="['/create-post']" [routerLinkActive]="['link-active']">new post</a>
       </li>
-      <li *ngIf="!userIsAuthenticated">
-        <a [routerLink]="['/login']" [routerLinkActive]="['link-active']">sign in</a>
+      <li *ngIf="!userIsAuthenticated" style="float: right">
+        <a [routerLink]="['/login']" [routerLinkActive]="['link-active']">sign in
+        </a>
       </li>
-      <li *ngIf="userIsAuthenticated">
+      <li *ngIf="userIsAuthenticated" style="float: right">
         <a (click)="logout()">sign out</a>
+      </li>
+      <li *ngIf="userIsAuthenticated" class="user">
+        {{userEmail}}
       </li>
     </ul>
   </div>

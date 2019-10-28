@@ -8,6 +8,11 @@
       <label for="password">Password</label>
       <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password">
     </div>
-    <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid" (click)="onLogin()">Enter</button>
+    <button *ngIf="!newAccount" type="submit" class="btn btn-primary" [disabled]="!loginForm.valid" (click)="onLogin()">Enter</button>
+    <button *ngIf="!newAccount" type="submit" class="btn btn-primary" (click)="onNewAccount()">New Account</button>
+    <button *ngIf="newAccount" type="submit" class="btn btn-primary" (click)="onRegister()">Submit</button>
   </form>
+  <div *ngIf="invalidEmailOrPassoword" class="labelWarning">
+    * Invalid email or password
+  </div>
 </div>

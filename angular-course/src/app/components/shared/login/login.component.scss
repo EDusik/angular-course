@@ -2,6 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   max-width: 1200px;
+  margin-top: 5% !important;
   margin: 0 auto;
   padding: 10px 10px 15px 10px;
 
@@ -10,7 +11,8 @@
     .form-group {
       font-size: 16px;
       color: #7f8c8d;
-      input, textarea {
+      input,
+      textarea {
         display: flex;
       }
 
@@ -39,16 +41,23 @@
       cursor: pointer;
       float: right;
       margin-top: 15px;
+      margin-left: 5px;
 
       &:disabled {
-        opacity: .6;
+        opacity: 0.6;
         &:hover {
           background-color: #7f8c8d;
         }
       }
       &:hover {
-        background-color: #737F80;
+        background-color: #737f80;
       }
     }
   }
+}
+
+.labelWarning {
+  margin-top: 0px !important;
+  font-size: 16px;
+  color: crimson;
 }

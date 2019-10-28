@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import {trigger, state, style, transition, animate} from '@angular/animations';
 import { PostsService } from 'src/app/services/posts.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-posts',
@@ -31,10 +32,12 @@ export class PostsComponent implements OnInit {
   postState = 'ready';
 
   constructor(
-    private postService: PostsService
+    private postService: PostsService,
+    private authService: AuthService,
   ) { }
 
   ngOnInit() {
+    this.authService.logout();
     this.getPosts();
   }
 
