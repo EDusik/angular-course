@@ -1,0 +1,30 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: 1px 1px 12px #9fa1a2;
+  background-color: white;
+  height: 42px;
+
+  ul {
+    padding: 12px;
+  }
+
+  ul > li {
+    display: inline;
+    padding: 10px;
+    a {
+      color: grey;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .link-active {
+    color: #0097e6 !important;
+  }
+}

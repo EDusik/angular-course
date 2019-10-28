@@ -12,14 +12,12 @@ ng g c --spec=false --style=scss <name>
 ng generate service <name>
 ng g s <name> --spec=false
 
-
 ### Generate New Class
 ng generate class <name> 
 ng g class <name> 
 
 ### Generate New Module
 ng generate module <name> 
-
 
 ### Generate New Routing Module
 ng generate module app-routing --flat --module=app

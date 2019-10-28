@@ -1,6 +1,10 @@
-body, html, ul, li, p {
+body, html, ul, li, p, textarea, input {
   margin: 0 auto;
   padding: 0px;
   list-style: none;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+*:focus {
+  outline:none
 }

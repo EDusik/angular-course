@@ -1,11 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { PostsService } from '../services/posts.service';
+
 import {trigger, state, style, transition, animate} from '@angular/animations';
+import { PostsService } from 'src/app/services/posts.service';
 
 @Component({
   selector: 'app-posts',
-  templateUrl: './posts.component.html',
   styleUrls: ['./posts.component.scss'],
+  template: `
+    <div class="wrapper">
+      <div *ngFor="let post of posts" class="post" [@postAppeared]="postState">
+        <h3>{{ (post?.title.length > 16) ? (post?.title | slice:0:16) + '...' : (post?.title)}}</h3>
+        <p>{{ (post?.body.length > 60) ? (post?.body | slice:0:60) + '...' : (post?.body) }}</p>
+        <a [routerLink]="['/post/'+ post?.id]">read more</a>
+      </div>
+    </div>
+  `,
   animations: [
     trigger('postAppeared', [
       state('ready', style({opacity: 1})),
