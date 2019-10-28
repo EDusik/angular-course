@@ -10,9 +10,6 @@
     .form-group {
       font-size: 16px;
       color: #7f8c8d;
-      input, textarea {
-        display: flex;
-      }
 
       label {
         width: 100%;
@@ -21,6 +18,7 @@
       }
 
       input {
+        display: flex;
         width: calc(100% - 20px);
         height: 28px;
         border-radius: 18px;
@@ -29,8 +27,18 @@
       }
 
       textarea {
-        width: 100%;
+        display: flex;
+        width: calc(100% - 20px);
         margin-bottom: 15px;
+        padding: 4px 10px;
+        border: solid #7f8c8d 1px;
+        font-size: 13px;
+      }
+
+      span {
+        font-style: italic;
+        line-height: 2.5;
+        font-weight: 500;
       }
     }
 
@@ -42,8 +50,8 @@
       text-transform: uppercase;
       cursor: pointer;
       padding: 15px;
-      cursor: pointer;
       float: right;
+      margin-top: 15px;
 
       &:disabled {
         opacity: .6;

@@ -2,20 +2,29 @@
   <form [formGroup]="createPostForm">
     <div class="form-group">
       <label for="userId">User Id</label>
-      <input type="text" class="form-control" id="userId" placeholder="User Id" formControlName="userId">
+      <input type="number" id="userId" name="userId" placeholder="User Id" formControlName="userId">
     </div>
     <div class="form-group">
       <label for="id">Id</label>
-      <input type="text" class="form-control" id="id" placeholder="id" formControlName="id">
+      <input type="number" id="id" name="id" placeholder="id" formControlName="id" maxlength="4" minlength="2">
+      <span *ngIf="createPostForm.controls['id'].errors?.required && (createPostForm.controls['id'].dirty || createPostForm.controls['id'].touched)">
+        <i>Id is required</i>
+      </span>
     </div>
     <div class="form-group">
       <label for="title">Title</label>
-      <input type="text" class="form-control" id="title" placeholder="Title" formControlName="title">
+      <input type="text" id="title" name="title" placeholder="Title" formControlName="title" maxlength="MIN_LENGTH" minlength="2">
+      <span *ngIf="createPostForm.controls['title'].errors?.required && (createPostForm.controls['title'].dirty || createPostForm.controls['title'].touched)">
+        <i>Title is required</i>
+      </span>
     </div>
     <div class="form-group">
       <label for="body">Body</label>
-      <textarea class="form-control" id="body" rows="5" formControlName="body"></textarea>
+      <textarea id="body" name="body" placeholder="Body" formControlName="body" rows="6"> </textarea>
+      <span *ngIf="createPostForm.controls['body'].errors?.required && (createPostForm.controls['body'].dirty || createPostForm.controls['body'].touched)">
+        <i>Body is required</i>
+      </span>
     </div>
-    <button type="submit" class="btn btn-primary" [disabled]="!createPostForm.valid" (click)="createPost()">Submit</button>
+    <button type="submit" class="btn btn-primary" [disabled]="!createPostForm.valid" (click)="createPost()">submit</button>
   </form>
 </div>
