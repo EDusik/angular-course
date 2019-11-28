@@ -8,7 +8,8 @@
     <p>{{post?.body}}</p>
   </div>
 
-  <h3>Comments</h3>
+  <app-post-comments-bar [commentsArray]="comments"></app-post-comments-bar>
+
   <div class="btn-middle">
     <button (click)="showAllComments()">{{ showComments === true ? 'hide comments' : 'show comments' }}</button>
   </div>

@@ -58,4 +58,6 @@ export class PostCreateComponent implements OnInit {
     this.createPostForm.get('title').setValue('');
     this.createPostForm.get('body').setValue('');
   }
+
 }
+

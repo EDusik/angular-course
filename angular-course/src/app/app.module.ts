@@ -13,6 +13,7 @@ import { PostCreateComponent } from './components/posts/post-create/post-create.
 import { LoginComponent } from './components/shared/login/login.component';
 import { PostsModule } from './components/posts/posts.module';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { PostCommentsBarComponent } from './components/posts/post-comments-bar/post-comments-bar.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
     PostDetailsComponent,
     PostCreateComponent,
     LoginComponent,
-    NavbarComponent
+    NavbarComponent,
+    PostCommentsBarComponent
   ],
   imports: [
     BrowserModule,

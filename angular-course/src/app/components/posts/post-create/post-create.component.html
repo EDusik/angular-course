@@ -28,3 +28,7 @@
     <button type="submit" class="btn btn-primary" [disabled]="!createPostForm.valid" (click)="createPost()">submit</button>
   </form>
 </div>
+
+
+<input [ngModel]="name" (ngModelChange)="name = $event" />
+
