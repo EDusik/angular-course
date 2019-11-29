@@ -1,3 +1,5 @@
-<div>
-    <h3>{{commentsArray}} Comments</h3>
+<div class="line">
+    <h3>{{numberComments}} Comments</h3>
+    <i class="fa fa-comments"></i>
 </div>
+<button (click)="changeShowComments()">{{ showComments === true ? 'hide comments' : 'show comments' }}</button>

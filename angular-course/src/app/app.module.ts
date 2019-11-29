@@ -14,6 +14,7 @@ import { LoginComponent } from './components/shared/login/login.component';
 import { PostsModule } from './components/posts/posts.module';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { PostCommentsBarComponent } from './components/posts/post-comments-bar/post-comments-bar.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { PostCommentsBarComponent } from './components/posts/post-comments-bar/p
     RouterModule.forRoot([]),
     FormsModule,
     ReactiveFormsModule,
+    AngularFontAwesomeModule
   ],
   providers: [PostsService],
   bootstrap: [AppComponent]

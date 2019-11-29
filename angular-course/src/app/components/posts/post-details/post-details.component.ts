@@ -25,6 +25,7 @@ export class PostDetailsComponent implements OnInit {
   comments: any;
   commentState = 'ready';
   showComments = true;
+  numberComments: number;
 
   constructor(
     private postService: PostsService,
@@ -47,6 +48,7 @@ export class PostDetailsComponent implements OnInit {
   getPostComments(postId) {
     this.postService.getPostComments(postId).subscribe(response => {
       this.comments = response;
+      this.numberComments = Object.keys(this.comments).length;
     });
   }
 
@@ -56,6 +58,10 @@ export class PostDetailsComponent implements OnInit {
 
   showAllComments() {
     this.showComments = !this.showComments;
+  }
+
+  changeShowComments(newValue) {
+    this.showComments = newValue;
   }
 
 }

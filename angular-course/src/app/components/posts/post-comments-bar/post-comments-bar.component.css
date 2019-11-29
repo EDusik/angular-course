@@ -1,3 +1,28 @@
+.line {
+  display: inline-flex;
+  border: 1px solid #737f80;
+  border-radius: 5px;
+  padding: 2px;
+  margin-right: 5px;
+}
 h3 {
-    color: #737F80;
+  color: #737f80;
+}
+.fa-comments {
+  color: #737f80;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+button {
+  height: 42px;
+  background-color: #7f8c8d;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 15px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #737f80;
 }

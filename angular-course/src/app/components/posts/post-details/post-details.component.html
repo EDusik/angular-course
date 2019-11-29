@@ -8,10 +8,9 @@
     <p>{{post?.body}}</p>
   </div>
 
-  <app-post-comments-bar [commentsArray]="comments"></app-post-comments-bar>
-
   <div class="btn-middle">
-    <button (click)="showAllComments()">{{ showComments === true ? 'hide comments' : 'show comments' }}</button>
+    <app-post-comments-bar [commentsNumber]="numberComments" (showAllComments)="changeShowComments($event)"></app-post-comments-bar>
+    <!--<button (click)="showAllComments()">{{ showComments === true ? 'hide comments' : 'show comments' }}</button>-->
   </div>
   <div [hidden]="!showComments" [@appeared]="commentState">
     <div *ngFor="let comment of comments" class="comment-details" [@appeared]="commentState">

@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { runInThisContext } from 'vm';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-post-comments-bar',
@@ -8,19 +7,24 @@ import { runInThisContext } from 'vm';
 })
 export class PostCommentsBarComponent implements OnInit {
 
-  comments: Comment[];
-   @Input('commentsArray') set selecionado(commentsArray) {
-    console.log('comments array: ', commentsArray);
-    this.comments = commentsArray;
-    // this.numberComments = this.comments.length;
+  numberComments: number;
+  showComments = true;
+
+   @Input('commentsNumber') set selecionado(commentsNumber) {
+    this.numberComments = commentsNumber;
   }
 
-  numberComments: number;
+  @Output() showAllComments = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
 
+  }
+
+  changeShowComments() {
+    this.showComments = !this.showComments;
+    this.showAllComments.emit(this.showComments);
   }
 
 }
