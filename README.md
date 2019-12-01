@@ -1,5 +1,4 @@
 # AngularCourse
-
 Angular version 8.0.2.
 Angular course for Company Compasso Tecnologia.
 
@@ -21,3 +20,15 @@ ng generate module <name>
 
 ### Generate New Routing Module
 ng generate module app-routing --flat --module=app
+
+### Generate New Directive
+ng generate directive <name>
+
+### Generate New Pipe
+ng generate pipe <name>
+
+### Generate New Interface
+ng generate interface <name>
+
+### Generate New Enum
+ng generate enum <name>
