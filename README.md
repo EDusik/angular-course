@@ -1,15 +1,15 @@
 # AngularCourse
 Angular version 8.0.2.
-Angular course for Company Compasso Tecnologia.
+Angular course for Company Compasso Tecnologia
 
 ## Angular Commands
 ### Generate New Component
 ng generate component <name>
-ng g c --spec=false --style=scss <name>
-
+ng g c --spec=false --style=scss <name> (deprecated)
+ng g c --skipTests=true --style=scss <name>
+  
 ### Generate New Service
 ng generate service <name>
-ng g s <name> --spec=false
 
 ### Generate New Class
 ng generate class <name> 
