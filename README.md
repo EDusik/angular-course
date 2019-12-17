@@ -5,7 +5,6 @@ Angular course for Company Compasso Tecnologia
 ## Angular Commands
 ### Generate New Component
 ng generate component <name>
-ng g c --spec=false --style=scss <name> (deprecated);
 ng g c --skipTests=true --style=scss <name>
   
 ### Generate New Service
