@@ -1,7 +1,7 @@
 <div id="about"> 
 
 ## :page_facing_up: About
-Angular course for Company Compasso Tecnologia
+Angular course for <i>Company Compasso Tecnologia</i>
 </div>
 
 <div id="tecnologies"> 
