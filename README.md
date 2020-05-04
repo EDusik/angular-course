@@ -53,7 +53,7 @@ ng generate interface <name>
 ```ng
 ng generate enum <name>
 ```
-#### :memo: Run the Project
+### :memo: Run the Project
 ```npm
 npm install
 ```
