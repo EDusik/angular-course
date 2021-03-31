@@ -1,19 +1,12 @@
-<div id="about"> 
-
 ## :page_facing_up: About
 Angular course for <i>Company Compasso Tecnologia</i>
-</div>
-
-<div id="tecnologies"> 
 
 ## :rocket: Technologies
 This project uses these technologies:
 - [Angular](https://angular.io/)
 - [JSONPlaceholder](https://jsonplaceholder.typicode.com/)
-</div>
 
 ## :computer: Commands 
-<div id="commands"> 
 
 ### Angular Commands
 #### Generate New Component
@@ -61,4 +54,3 @@ npm install
 ```npm
 ng serve -o
 ```
-</div>
